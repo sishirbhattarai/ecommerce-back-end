@@ -22,16 +22,16 @@ SO THAT my company can compete with other e-commerce companies
 
 ## GitHub Link
 
-https://github.com/sishirbhattarai/Employee-tracker
+https://github.com/sishirbhattarai/ecommerce-back-end
 
 ## Usage
-This is used to track employees.
+This is used to manage ecommerce. 
 
 ## Contributors
 I am the only contributors.
 
 ## Link to the Video
-https://drive.google.com/file/d/1PXIZqCGIaM-JrWuu3neoA6JtGGkUtIoP/view
+
 
 ## Acceptance Criteria
 
