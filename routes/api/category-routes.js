@@ -85,12 +85,12 @@ router.delete('/:id', (req, res) => {
         id: req.params.id
       }
     })
-    .then(function(newCategory) {
-      if(!newCategory) {
+    .then(function(categoryData) {
+      if(!categoryData) {
         res.status(404).json({message: "Not found"});
         return;
       }
-      res.json(newCategory);
+      res.json(categoryData);
     })
     .catch(function(err) {
       res.jason(err)

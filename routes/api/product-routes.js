@@ -105,7 +105,7 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((updatedProductTags) => res.status(200).json(updatedProductTags))
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
@@ -114,6 +114,22 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy(
+    {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(productData) {
+      if(!productData) {
+        res.status(404).json({message: "Not found"});
+        return;
+      }
+      res.json(productData);
+    })
+    .catch(function(err) {
+      res.jason(err)
+    })
 });
 
 module.exports = router;

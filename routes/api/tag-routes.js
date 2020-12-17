@@ -85,12 +85,12 @@ router.delete('/:id', (req, res) => {
         id: req.params.id
       }
     })
-    .then(function(newTag) {
-      if(!newTag) {
+    .then(function(tagData) {
+      if(!tagData) {
         res.status(404).json({message: "Not found"});
         return;
       }
-      res.json(newTag);
+      res.json(tagData);
     })
     .catch(function(err) {
       res.jason(err)
