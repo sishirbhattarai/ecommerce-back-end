@@ -90,7 +90,7 @@ router.delete('/:id', (req, res) => {
         res.status(404).json({message: "Not found"});
         return;
       }
-      res.json(newTag)({message: "you have successfully deleted"});
+      res.json(newTag);
     })
     .catch(function(err) {
       res.jason(err)

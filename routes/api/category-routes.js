@@ -55,10 +55,46 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
+  Category.update(
+    {
+    category_name: req.body.category_name
+     },
+     {
+       where: {
+         id: req.params.id
+       }
+     }  
+    )
+    .then(function(newCategory) {
+      if(!newCategory) {
+        res.status(404).json({message: "Not found"});
+        return;
+      }
+      res.json(newCategory);
+    })
+    .catch(function(err) {
+      res.jason(err)
+    })
 });
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+  Category.destroy(
+    {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(newCategory) {
+      if(!newCategory) {
+        res.status(404).json({message: "Not found"});
+        return;
+      }
+      res.json(newCategory);
+    })
+    .catch(function(err) {
+      res.jason(err)
+    })
 });
 
 module.exports = router;
